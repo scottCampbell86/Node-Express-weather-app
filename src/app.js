@@ -10,7 +10,19 @@ app.get('/', function(req, res){
   //param two: a callback that takes two params, giving instructions for what to do with the get request -- what to send back to client
     //1. req: is an object containing information about the incoming request being sent to server from the client
     //. res: is an object that cotains a host of methods allowing us to customize what we are going to send back to the client
-  res.send('Hello express')
+  res.send(`hi, i'm express!`)
+})
+
+app.get('/help', (req, res) => {
+  res.send(`Help Page`)
+})
+
+app.get('/about', (req, res) => {
+  res.send(`About Page`)
+})
+
+app.get('/weather', (req, res) => {
+  res.send(`Weather Page`)
 })
 
 app.listen(3000, () => {
