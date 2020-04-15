@@ -1,8 +1,10 @@
+const path = require('path')
 //not just defining a const, but this is declaring a function with the label express, this loads express into our app, giving us access to the express function
 const express = require('express')
-
 //declaring a const with the label app and assigning it to the invocation of the express function
 const app = express()
+const publicDirectoryPath = path.join(__dirname, '../public')
+app.use(express.static(publicDirectoryPath))
 
 //below we invoke the get method on the express function
 app.get('/', function(req, res){
@@ -21,11 +23,14 @@ app.get('/help', (req, res) => {
 })
 
 app.get('/about', (req, res) => {
-  res.send(`About Page`)
+  res.send('<h1>About</h1>')
 })
 
 app.get('/weather', (req, res) => {
-  res.send(`Weather Page`)
+  res.send({
+    forecast: 'Stormy',
+    location: 'Portland'
+  })
 })
 
 app.listen(3000, () => {
