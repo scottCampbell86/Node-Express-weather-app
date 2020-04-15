@@ -3,28 +3,25 @@ const path = require('path')
 const express = require('express')
 //declaring a const with the label app and assigning it to the invocation of the express function
 const app = express()
+
+//below two lines form root path...overwrites an express route to the path '/'
 const publicDirectoryPath = path.join(__dirname, '../public')
 app.use(express.static(publicDirectoryPath))
 
-//below we invoke the get method on the express function
-app.get('/', function(req, res){
-  //param one: this is setting the endpoint of our get request ... '/' is root
-  //param two: a callback that takes two params, giving instructions for what to do with the get request -- what to send back to client
-    //1. req: is an object containing information about the incoming request being sent to server from the client
-    //. res: is an object that cotains a host of methods allowing us to customize what we are going to send back to the client
-  res.send(`<h1>Weather</h1>`)
-})
+// lines 8 and 9 make the below useless...
 
-app.get('/help', (req, res) => {
-  res.send({
-    name: 'Buddy',
-    species: 'cat'
-  })
-})
-
-app.get('/about', (req, res) => {
-  res.send('<h1>About</h1>')
-})
+// app.get('/', function(req, res){
+//   res.send(`this is the server response...`)
+// })
+// app.get('/help', (req, res) => {
+//   res.send({
+//     name: 'Buddy',
+//     species: 'cat'
+//   })
+// })
+// app.get('/about', (req, res) => {
+//   res.send('<h1>About</h1>')
+// })
 
 app.get('/weather', (req, res) => {
   res.send({
