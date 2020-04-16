@@ -46,6 +46,7 @@ app.get('/weather', (req, res) => {
     })
 })
 
+//is a 404 for help 404s only
 app.get('/help/*', (req, res) => {
     res.render('404', {
         title: '404',
@@ -54,6 +55,7 @@ app.get('/help/*', (req, res) => {
     })
 })
 
+//global 404 has to come last!
 app.get('*', (req, res) => {
     res.render('404', {
         title: '404',
