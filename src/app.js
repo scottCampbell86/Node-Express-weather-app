@@ -7,21 +7,11 @@ const app = express()
 //below two lines form root path...overwrites an express route to the path '/'
 const publicDirectoryPath = path.join(__dirname, '../public')
 app.use(express.static(publicDirectoryPath))
+app.set('view engine', 'hbs')
 
-// lines 8 and 9 make the below useless...
-
-// app.get('/', function(req, res){
-//   res.send(`this is the server response...`)
-// })
-// app.get('/help', (req, res) => {
-//   res.send({
-//     name: 'Buddy',
-//     species: 'cat'
-//   })
-// })
-// app.get('/about', (req, res) => {
-//   res.send('<h1>About</h1>')
-// })
+app.get('', (req, res) => {
+  res.render('index')
+})
 
 app.get('/weather', (req, res) => {
   res.send({
