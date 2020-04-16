@@ -3,13 +3,15 @@ const path = require('path')
 const express = require('express')
 //declaring a const with the label app and assigning it to the invocation of the express function
 const app = express()
-const viewsPath = path.join(__dirname, '../templates')
-
-//below two lines form root path...overwrites an express route to the path '/'
+//define paths for express config
+const viewsPath = path.join(__dirname, '../templates/views')
 const publicDirectoryPath = path.join(__dirname, '../public')
-app.use(express.static(publicDirectoryPath))
+const partialsPath = path.join(__dirname, '../templates/partials')
+//set up handlebars engine and views location
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
+//set up static directory to serve
+app.use(express.static(publicDirectoryPath))
 
 app.get('/', (req, res) => {
   res.render('index', {
