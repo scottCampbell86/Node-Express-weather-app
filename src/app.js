@@ -15,6 +15,12 @@ app.get('/', (req, res) => {
   })
 })
 
+app.get('/help', (req, res) => {
+  res.render('help', {
+    text: 'This is the help message'
+  })
+})
+
 app.get('/about', (req, res) => {
   res.render('about', {
     title: 'About Me',
