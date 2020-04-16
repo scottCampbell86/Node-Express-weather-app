@@ -54,6 +54,7 @@ app.get('/help/*', (req, res) => {
     })
 })
 
+//404 has to come last!
 app.get('*', (req, res) => {
     res.render('404', {
         title: '404',
