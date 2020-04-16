@@ -9,8 +9,17 @@ const publicDirectoryPath = path.join(__dirname, '../public')
 app.use(express.static(publicDirectoryPath))
 app.set('view engine', 'hbs')
 
-app.get('', (req, res) => {
-  res.render('index')
+app.get('/', (req, res) => {
+  res.render('index', {
+    title: 'Weather'
+  })
+})
+
+app.get('/about', (req, res) => {
+  res.render('about', {
+    title: 'About Me',
+    name: 'Scott Campbell'
+  })
 })
 
 app.get('/weather', (req, res) => {
