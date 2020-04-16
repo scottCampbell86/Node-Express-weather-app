@@ -3,11 +3,13 @@ const path = require('path')
 const express = require('express')
 //declaring a const with the label app and assigning it to the invocation of the express function
 const app = express()
+const viewsPath = path.join(__dirname, '../templates')
 
 //below two lines form root path...overwrites an express route to the path '/'
 const publicDirectoryPath = path.join(__dirname, '../public')
 app.use(express.static(publicDirectoryPath))
 app.set('view engine', 'hbs')
+app.set('views', viewsPath)
 
 app.get('/', (req, res) => {
   res.render('index', {
