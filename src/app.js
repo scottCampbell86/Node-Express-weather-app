@@ -40,11 +40,18 @@ app.get('/help', (req, res) => {
 })
 
 app.get('/weather', (req, res) => {
+    if(!req.query.address) {
+      return res.send({
+        error: 'Please provide an address.'
+      })
+    }
     res.send({
-        forecast: 'It is snowing',
-        location: 'Philadelphia'
+        forecast: '',
+        location: '',
+        address: req.query.address
     })
 })
+
 
 //is a 404 for help 404s only
 app.get('/help/*', (req, res) => {
