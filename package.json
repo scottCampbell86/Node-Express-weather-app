@@ -1,25 +1,23 @@
 {
-  "name": "express-starter-server",
+  "name": "Node-Express-weather-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node src/app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/scottCampbell86/express-starter-server.git"
+    "url": "git+https://github.com/scottCampbell86/Node-Express-weather-app.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/scottCampbell86/express-starter-server/issues"
+    "url": "https://github.com/scottCampbell86/Node-Express-weather-app/issues"
   },
-  "homepage": "https://github.com/scottCampbell86/express-starter-server#readme",
+  "homepage": "https://github.com/scottCampbell86/Node-Express-weather-app#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "hbs": "^4.1.1",
     "request": "^2.88.2"
   }
 }
